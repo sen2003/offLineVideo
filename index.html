@@ -1,24 +1,267 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
-  <meta charset="UTF-8">
-  <title>手機影片播放器（離線可用）</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>羊仔播放器</title>
+    <link rel="stylesheet" href="./style.css">
+    
 </head>
 <body>
-  <h1>影片播放器</h1>
-  <video controls width="100%" preload="auto">
-    <source src="movie.mp4" type="video/mp4">
-    你的瀏覽器不支援影片播放。
-  </video>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">MyFlix</div>
+            <div class="nav-menu">
+                <button class="nav-item active" onclick="showSection('movies')">電影</button>
+                <button class="nav-item" onclick="showSection('music')">音樂</button>
+            </div>
+        </nav>
+    </header>
 
-  <p>📥 首次載入時請保持連線，影片會快取。之後就算離線也能播放。</p>
+    <main class="main">
+        
+            
+        </div>
 
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
-        .then(reg => console.log('SW 註冊成功'))
-        .catch(err => console.error('SW 註冊失敗:', err));
-    }
-  </script>
+        <!-- 影片區塊 -->
+        <section id="movies" class="section active">
+            <h2 class="section-title">電影</h2>
+            <div class="media-grid">
+                <div class="media-card" onclick="openPlayer('movie', '示範影片 1', '這是第一部示範影片，展示HTML5播放功能。', './videos/sample1.mp4')">
+                    <div class="media-poster">🎬</div>
+                    <div class="media-info">
+                        <div class="media-title">示範影片 1 - Big Buck Bunny</div>
+                        <div class="media-description">經典的開源動畫短片，適合測試影片播放功能。</div>
+                    </div>
+                </div>
+                <div class="media-card" onclick="openPlayer('movie', '示範影片 2', '這是第二部示範影片，高畫質動畫作品。', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4')">
+                    <div class="media-poster">🐘</div>
+                    <div class="media-info">
+                        <div class="media-title">示範影片 2 - Elephants Dream</div>
+                        <div class="media-description">充滿想像力的科幻動畫短片。</div>
+                    </div>
+                </div>
+                <div class="media-card" onclick="openPlayer('movie', '示範影片 3', '第三部示範影片，展示不同的影片格式。', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4')">
+                    <div class="media-poster">🔥</div>
+                    <div class="media-info">
+                        <div class="media-title">示範影片 3 - For Bigger Blazes</div>
+                        <div class="media-description">高品質的示範影片內容。</div>
+                    </div>
+                </div>
+                <div class="media-card" onclick="openPlayer('movie', '示範影片 4', '第四部示範影片，適合行動裝置觀看。', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4')">
+                    <div class="media-poster">🌟</div>
+                    <div class="media-info">
+                        <div class="media-title">示範影片 4 - For Bigger Escapes</div>
+                        <div class="media-description">精彩的視覺效果展示影片。</div>
+                    </div>
+                </div>
+                <div class="media-card" onclick="openPlayer('movie', '示範影片 5', '第五部示範影片，多元化內容展示。', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4')">
+                    <div class="media-poster">🎯</div>
+                    <div class="media-info">
+                        <div class="media-title">示範影片 5 - For Bigger Fun</div>
+                        <div class="media-description">娛樂性豐富的示範影片。</div>
+                    </div>
+                </div>
+                <div class="media-card" onclick="openPlayer('movie', '示範影片 6', '第六部示範影片，展示串流播放品質。', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4')">
+                    <div class="media-poster">⚔️</div>
+                    <div class="media-info">
+                        <div class="media-title">示範影片 6 - Sintel</div>
+                        <div class="media-description">著名的開源動畫電影短片。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 音樂區塊 -->
+        <section id="music" class="section">
+            <h2 class="section-title">音樂</h2>
+            <div class="media-grid">
+                <div class="media-card" onclick="openPlayer('music', 'Chill Lo-Fi Beat', '放鬆的Lo-Fi音樂，適合工作和學習時聆聽。', null, './music/music01.mp3')">
+                    <div class="media-poster">🎵</div>
+                    <div class="media-info">
+                        <div class="media-title">Chill Lo-Fi Beat</div>
+                        <div class="media-description">放鬆的Lo-Fi音樂，適合工作和學習時聆聽。</div>
+                    </div>
+                </div>
+                <div class="media-card" onclick="openPlayer('music', 'Acoustic Guitar Melody', '溫暖的木吉他旋律，帶來寧靜的感受。', null, 'https://www.soundjay.com/misc/sounds/bell-ringing-05.wav', 'Acoustic Band')">
+                    <div class="media-poster">🎸</div>
+                    <div class="media-info">
+                        <div class="media-title">Acoustic Guitar Melody</div>
+                        <div class="media-description">溫暖的木吉他旋律，帶來寧靜的感受。</div>
+                    </div>
+                </div>
+                <div class="media-card" onclick="openPlayer('music', 'Electronic Dreams', '未來感十足的電子音樂，充滿活力。', null, 'https://www.soundjay.com/misc/sounds/bell-ringing-05.wav', 'Synth Master')">
+                    <div class="media-poster">🎹</div>
+                    <div class="media-info">
+                        <div class="media-title">Electronic Dreams</div>
+                        <div class="media-description">未來感十足的電子音樂，充滿活力。</div>
+                    </div>
+                </div>
+                <div class="media-card" onclick="openPlayer('music', 'Jazz Night', '經典爵士樂，營造浪漫的夜晚氛圍。', null, 'https://www.soundjay.com/misc/sounds/bell-ringing-05.wav', 'Jazz Ensemble')">
+                    <div class="media-poster">🎷</div>
+                    <div class="media-info">
+                        <div class="media-title">Jazz Night</div>
+                        <div class="media-description">經典爵士樂，營造浪漫的夜晚氛圍。</div>
+                    </div>
+                </div>
+                <div class="media-card" onclick="openPlayer('music', 'Rock Anthem', '激昂的搖滾樂，點燃你的熱情。', null, 'https://www.soundjay.com/misc/sounds/bell-ringing-05.wav', 'Rock Band')">
+                    <div class="media-poster">🎸</div>
+                    <div class="media-info">
+                        <div class="media-title">Rock Anthem</div>
+                        <div class="media-description">激昂的搖滾樂，點燃你的熱情。</div>
+                    </div>
+                </div>
+                <div class="media-card" onclick="openPlayer('music', 'Piano Serenade', '優美的鋼琴小夜曲，撫慰心靈。', null, 'https://www.soundjay.com/misc/sounds/bell-ringing-05.wav', 'Piano Virtuoso')">
+                    <div class="media-poster">🎹</div>
+                    <div class="media-info">
+                        <div class="media-title">Piano Serenade</div>
+                        <div class="media-description">優美的鋼琴小夜曲，撫慰心靈。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 羊仔播放器</p>
+      </footer>
+    <!-- 播放器模態框 -->
+    <div id="playerModal" class="player-modal">
+        <div class="player-content">
+            <div class="player-header">
+                <h3 id="playerTitle">播放中...</h3>
+                <button class="close-btn" onclick="closePlayer()">關閉</button>
+            </div>
+            <div class="player-video" id="playerVideoContainer">
+                <div class="video-placeholder">
+                    🎬 請點選影片開始播放<br>
+                    <small>支援 MP4、WebM 等格式</small>
+                </div>
+            </div>
+            <div class="player-info">
+                <p id="playerDescription">內容描述...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSection = 'movies';
+
+        function showSection(sectionName) {
+            // 隱藏所有區塊
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // 移除所有導航項目的active狀態
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // 顯示選中的區塊
+            document.getElementById(sectionName).classList.add('active');
+            
+            // 為對應的導航項目添加active狀態
+            event.target.classList.add('active');
+            
+            currentSection = sectionName;
+        }
+
+        function openPlayer(type, title, description, videoUrl = null, audioUrl = null, artist = null) {
+            document.getElementById('playerTitle').textContent = title;
+            document.getElementById('playerDescription').textContent = description;
+            
+            const playerVideoContainer = document.getElementById('playerVideoContainer');
+            
+            if (type === 'movie' && videoUrl) {
+                // 創建HTML5影片播放器
+                playerVideoContainer.innerHTML = `
+                    <video controls autoplay preload="metadata" style="width: 100%; height: auto; max-height: 400px;">
+                        <source src="${videoUrl}" type="video/mp4">
+                        <p>您的瀏覽器不支援影片播放。請嘗試更新瀏覽器或使用其他瀏覽器。</p>
+                    </video>
+                `;
+            } else if (type === 'music') {
+                if (audioUrl) {
+                    // 創建HTML5音樂播放器
+                    playerVideoContainer.innerHTML = `
+                        <div class="audio-player">
+                            <div class="audio-info">
+                                <div class="audio-title">${title}</div>
+                                <div class="audio-artist">${artist || '未知藝術家'}</div>
+                            </div>
+                            <audio controls autoplay preload="metadata">
+                                <source src="${audioUrl}" type="audio/mpeg">
+                                <source src="${audioUrl}" type="audio/wav">
+                                <source src="${audioUrl}" type="audio/ogg">
+                                <p>您的瀏覽器不支援音樂播放。請嘗試更新瀏覽器或使用其他瀏覽器。</p>
+                            </audio>
+                        </div>
+                    `;
+                } else {
+                    // 音樂播放器預設狀態
+                    playerVideoContainer.innerHTML = `
+                        <div class="music-placeholder">
+                            🎵 ${title}<br>
+                            <small>音樂播放器就緒</small><br>
+                            <small>請上傳音樂檔案或提供音樂連結</small>
+                        </div>
+                    `;
+                }
+            } else {
+                playerVideoContainer.innerHTML = `
+                    <div class="video-placeholder">
+                        ❌ 媒體載入失敗<br>
+                        <small>請檢查檔案連結或網路連線</small>
+                    </div>
+                `;
+            }
+            
+            document.getElementById('playerModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePlayer() {
+            const playerVideoContainer = document.getElementById('playerVideoContainer');
+            // 停止影片播放器
+            const video = playerVideoContainer.querySelector('video');
+            if (video) {
+                video.pause();
+                video.currentTime = 0;
+            }
+            
+            // 停止音樂播放器
+            const audio = playerVideoContainer.querySelector('audio');
+            if (audio) {
+                audio.pause();
+                audio.currentTime = 0;
+            }
+            
+            // 重置為預設狀態
+            playerVideoContainer.innerHTML = `
+                <div class="video-placeholder">
+                    🎬 請點選影片開始播放<br>
+                    <small>支援 MP4、WebM 等格式</small>
+                </div>
+            `;
+            
+            document.getElementById('playerModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // 點擊模態框背景關閉播放器
+        document.getElementById('playerModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePlayer();
+            }
+        });
+
+        // ESC鍵關閉播放器
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closePlayer();
+            }
+        });
+    </script>
 </body>
 </html>

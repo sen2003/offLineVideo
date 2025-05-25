@@ -1,0 +1,353 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #141414;
+    color: white;
+    line-height: 1.6;
+}
+
+.header {
+    background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, transparent 100%);
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #e50914;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-item {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 1rem;
+}
+
+.nav-item:hover, .nav-item.active {
+    background: #e50914;
+    transform: translateY(-2px);
+}
+
+.main {
+    margin-top: 80px;
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    background: linear-gradient(45deg, #e50914, #ff6b6b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.media-card {
+    background: #222;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.media-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(229, 9, 20, 0.3);
+}
+
+.media-poster {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: white;
+}
+
+.media-info {
+    padding: 1rem;
+}
+
+.media-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.media-description {
+    color: #ccc;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.player-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    padding: 2rem;
+}
+
+.player-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #222;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.player-header {
+    padding: 1rem;
+    background: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-btn {
+    background: #e50914;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.close-btn:hover {
+    background: #d40813;
+}
+
+.player-video {
+    width: 100%;
+    height: auto;
+    background: #000;
+    position: relative;
+}
+
+.player-video video {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    background: #000;
+}
+
+.video-placeholder {
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(135deg, #333 0%, #555 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ccc;
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 2rem;
+    line-height: 1.5;
+}
+
+.audio-player {
+    width: 100%;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.audio-player audio {
+    width: 100%;
+    margin-top: 1rem;
+    border-radius: 4px;
+}
+
+.audio-info {
+    margin-bottom: 1rem;
+}
+
+.audio-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.audio-artist {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.music-placeholder {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 2rem;
+    line-height: 1.5;
+    border-radius: 8px;
+}
+
+.player-info {
+    padding: 1.5rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #000;
+    color: #aaa;
+  }
+
+/* 手機響應式設計 */
+@media (max-width: 768px) {
+    .nav-menu {
+        gap: 1rem;
+    }
+
+    .nav-item {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .main {
+        padding: 1rem;
+        margin-top: 70px;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .media-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .media-poster {
+        height: 160px;
+        font-size: 2.5rem;
+    }
+
+    .player-modal {
+        padding: 1rem;
+    }
+
+    @media (max-width: 768px) {
+        .player-video video {
+            max-height: 250px;
+        }
+        
+        .video-placeholder {
+            height: 200px;
+            font-size: 1rem;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .media-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-menu {
+        gap: 0.5rem;
+    }
+
+    .nav-item {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
+    }
+}
+
+.hero {
+    background: linear-gradient(135deg, #e50914 0%, #8b0000 100%);
+    padding: 3rem 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    border-radius: 8px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 2rem 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+}
