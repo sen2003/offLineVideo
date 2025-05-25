@@ -1,7 +1,7 @@
 const CACHE_NAME = 'video-cache-v1';
 const urlsToCache = [
   'index.html',
-  'music01.mp3'
+  'movie.mp4'
 ];
 
 self.addEventListener('install', event => {
