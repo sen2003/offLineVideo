@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>手機影片播放器（離線可用）</title>
+</head>
+<body>
+  <h1>影片播放器</h1>
+  <video controls width="100%" preload="auto">
+    <source src="movie.mp4" type="video/mp4">
+    你的瀏覽器不支援影片播放。
+  </video>
+
+  <p>📥 首次載入時請保持連線，影片會快取。之後就算離線也能播放。</p>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(reg => console.log('SW 註冊成功'))
+        .catch(err => console.error('SW 註冊失敗:', err));
+    }
+  </script>
+</body>
+</html>
