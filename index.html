@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
     <title>羊仔播放器</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="manifest" href="manifest.json">
+    
     
 </head>
 <body>
@@ -27,46 +30,46 @@
         <section id="movies" class="section active">
             <h2 class="section-title">電影</h2>
             <div class="media-grid">
-                <div class="media-card" onclick="openPlayer('movie', '示範影片 1', '這是第一部示範影片，展示HTML5播放功能。', './videos/sample1.mp4')">
+                <div class="media-card" onclick="openPlayer('movie', 'Movie 1', '1', './videos/sample1.mp4')">
                     <div class="media-poster">🎬</div>
                     <div class="media-info">
-                        <div class="media-title">示範影片 1 - Big Buck Bunny</div>
-                        <div class="media-description">經典的開源動畫短片，適合測試影片播放功能。</div>
+                        <div class="media-title">1</div>
+                        <div class="media-description">測試影片播放功能。</div>
                     </div>
                 </div>
-                <div class="media-card" onclick="openPlayer('movie', '示範影片 2', '這是第二部示範影片，高畫質動畫作品。', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4')">
-                    <div class="media-poster">🐘</div>
+                <div class="media-card" onclick="openPlayer('movie', 'Movie 2', '2', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4')">
+                    <div class="media-poster">🎬</div>
                     <div class="media-info">
-                        <div class="media-title">示範影片 2 - Elephants Dream</div>
-                        <div class="media-description">充滿想像力的科幻動畫短片。</div>
+                        <div class="media-title">2</div>
+                        <div class="media-description"></div>
                     </div>
                 </div>
-                <div class="media-card" onclick="openPlayer('movie', '示範影片 3', '第三部示範影片，展示不同的影片格式。', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4')">
-                    <div class="media-poster">🔥</div>
+                <div class="media-card" onclick="openPlayer('movie', 'Movie 3', '3', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4')">
+                    <div class="media-poster">🎬</div>
                     <div class="media-info">
-                        <div class="media-title">示範影片 3 - For Bigger Blazes</div>
-                        <div class="media-description">高品質的示範影片內容。</div>
+                        <div class="media-title">3</div>
+                        <div class="media-description"></div>
                     </div>
                 </div>
-                <div class="media-card" onclick="openPlayer('movie', '示範影片 4', '第四部示範影片，適合行動裝置觀看。', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4')">
-                    <div class="media-poster">🌟</div>
+                <div class="media-card" onclick="openPlayer('movie', 'Movie 4', '4', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4')">
+                    <div class="media-poster">🎬</div>
                     <div class="media-info">
-                        <div class="media-title">示範影片 4 - For Bigger Escapes</div>
-                        <div class="media-description">精彩的視覺效果展示影片。</div>
+                        <div class="media-title">4</div>
+                        <div class="media-description"></div>
                     </div>
                 </div>
-                <div class="media-card" onclick="openPlayer('movie', '示範影片 5', '第五部示範影片，多元化內容展示。', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4')">
-                    <div class="media-poster">🎯</div>
+                <div class="media-card" onclick="openPlayer('movie', 'Movie 5', '5', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4')">
+                    <div class="media-poster">🎬</div>
                     <div class="media-info">
-                        <div class="media-title">示範影片 5 - For Bigger Fun</div>
-                        <div class="media-description">娛樂性豐富的示範影片。</div>
+                        <div class="media-title">5</div>
+                        <div class="media-description"></div>
                     </div>
                 </div>
-                <div class="media-card" onclick="openPlayer('movie', '示範影片 6', '第六部示範影片，展示串流播放品質。', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4')">
-                    <div class="media-poster">⚔️</div>
+                <div class="media-card" onclick="openPlayer('movie', 'Movie 6', '6', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4')">
+                    <div class="media-poster">🎬</div>
                     <div class="media-info">
-                        <div class="media-title">示範影片 6 - Sintel</div>
-                        <div class="media-description">著名的開源動畫電影短片。</div>
+                        <div class="media-title">6</div>
+                        <div class="media-description"></div>
                     </div>
                 </div>
             </div>
@@ -76,43 +79,43 @@
         <section id="music" class="section">
             <h2 class="section-title">音樂</h2>
             <div class="media-grid">
-                <div class="media-card" onclick="openPlayer('music', 'Chill Lo-Fi Beat', '放鬆的Lo-Fi音樂，適合工作和學習時聆聽。', null, './music/music01.mp3')">
+                <div class="media-card" onclick="openPlayer('music', 'YOASOBI「祝福」', '好聽的音樂', null, './music/music01.mp3')">
                     <div class="media-poster">🎵</div>
                     <div class="media-info">
-                        <div class="media-title">Chill Lo-Fi Beat</div>
-                        <div class="media-description">放鬆的Lo-Fi音樂，適合工作和學習時聆聽。</div>
+                        <div class="media-title">YOASOBI「祝福」</div>
+                        <div class="media-description">好聽的音樂。</div>
                     </div>
                 </div>
                 <div class="media-card" onclick="openPlayer('music', 'Acoustic Guitar Melody', '溫暖的木吉他旋律，帶來寧靜的感受。', null, 'https://www.soundjay.com/misc/sounds/bell-ringing-05.wav', 'Acoustic Band')">
-                    <div class="media-poster">🎸</div>
+                    <div class="media-poster">🎵</div>
                     <div class="media-info">
                         <div class="media-title">Acoustic Guitar Melody</div>
                         <div class="media-description">溫暖的木吉他旋律，帶來寧靜的感受。</div>
                     </div>
                 </div>
                 <div class="media-card" onclick="openPlayer('music', 'Electronic Dreams', '未來感十足的電子音樂，充滿活力。', null, 'https://www.soundjay.com/misc/sounds/bell-ringing-05.wav', 'Synth Master')">
-                    <div class="media-poster">🎹</div>
+                    <div class="media-poster">🎵</div>
                     <div class="media-info">
                         <div class="media-title">Electronic Dreams</div>
                         <div class="media-description">未來感十足的電子音樂，充滿活力。</div>
                     </div>
                 </div>
                 <div class="media-card" onclick="openPlayer('music', 'Jazz Night', '經典爵士樂，營造浪漫的夜晚氛圍。', null, 'https://www.soundjay.com/misc/sounds/bell-ringing-05.wav', 'Jazz Ensemble')">
-                    <div class="media-poster">🎷</div>
+                    <div class="media-poster">🎵</div>
                     <div class="media-info">
                         <div class="media-title">Jazz Night</div>
                         <div class="media-description">經典爵士樂，營造浪漫的夜晚氛圍。</div>
                     </div>
                 </div>
                 <div class="media-card" onclick="openPlayer('music', 'Rock Anthem', '激昂的搖滾樂，點燃你的熱情。', null, 'https://www.soundjay.com/misc/sounds/bell-ringing-05.wav', 'Rock Band')">
-                    <div class="media-poster">🎸</div>
+                    <div class="media-poster">🎵</div>
                     <div class="media-info">
                         <div class="media-title">Rock Anthem</div>
                         <div class="media-description">激昂的搖滾樂，點燃你的熱情。</div>
                     </div>
                 </div>
                 <div class="media-card" onclick="openPlayer('music', 'Piano Serenade', '優美的鋼琴小夜曲，撫慰心靈。', null, 'https://www.soundjay.com/misc/sounds/bell-ringing-05.wav', 'Piano Virtuoso')">
-                    <div class="media-poster">🎹</div>
+                    <div class="media-poster">🎵</div>
                     <div class="media-info">
                         <div class="media-title">Piano Serenade</div>
                         <div class="media-description">優美的鋼琴小夜曲，撫慰心靈。</div>
@@ -145,6 +148,15 @@
     </div>
 
     <script>
+
+        if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('./serverWorker.js')
+            .then((reg) => console.log('Service Worker registered:', reg))
+            .catch((err) => console.error('Service Worker registration failed:', err));
+        });
+        }
+
         let currentSection = 'movies';
 
         function showSection(sectionName) {

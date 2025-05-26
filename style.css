@@ -249,6 +249,7 @@ body {
 }
 
 footer {
+    flex:1;
     text-align: center;
     padding: 1rem;
     background-color: #000;
@@ -263,7 +264,7 @@ footer {
 
     .nav-item {
         padding: 0.4rem 0.8rem;
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     .logo {
